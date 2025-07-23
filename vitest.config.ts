@@ -13,7 +13,7 @@ export default defineConfig({
     projects: [
       {
         test: {
-          environment: 'jsdom',
+          environment: 'happy-dom',
           include: ['packages/**/__tests__/**/*.test.ts'],
           exclude: ['packages/**/stories/*.stories.ts'],
         },
