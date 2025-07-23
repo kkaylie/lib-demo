@@ -1,9 +1,9 @@
 {
-  "extends": "./tsconfig.json", // 继承根配置
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true, // 必须
-    "module": "CommonJS" // Node.js 环境
+    "composite": true,
+    "module": "CommonJS"
     // "types": ["node", "vitest/globals", "vite/client"]
   },
-  "include": ["vite.config.ts", "vitest.config.ts"] // 只包含这些配置文件
+  "include": ["vite.config.ts", "vitest.config.ts", "commitlint.config.ts"]
 }
