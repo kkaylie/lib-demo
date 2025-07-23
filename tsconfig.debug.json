@@ -1,0 +1,24 @@
+// tsconfig.debug.json
+{
+  "compilerOptions": {
+    // --- 直接从你的 base 和 app 配置里复制最核心的选项 ---
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@my-lib/*": ["packages/*"]
+    }
+  },
+  // --- 只包含绝对必要的文件 ---
+  "include": [
+    "env.d.ts", // 包含根目录的类型垫片
+    "packages/button/src/button.vue", // 包含被引用的组件
+    "packages/button/stories/button.stories.ts" // 包含报错的文件
+  ]
+}

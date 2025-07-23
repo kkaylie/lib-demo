@@ -1,0 +1,36 @@
+// tsconfig.json
+{
+  "files": [], // 保持为空，因为它只负责引用
+  "references": [
+    // 引用 Demo 应用的配置
+    { "path": "./tsconfig.app.json" },
+    // 引用 Node 工具的配置
+    { "path": "./tsconfig.node.json" }
+    // 引用库构建的配置
+    // { "path": "./packages/tsconfig.build.json" }
+  ],
+  // 可以在这里放一些所有项目共享的基础配置
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    // "moduleResolution": "bundler",
+    "strict": true,
+    // "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true, // 跳过对 .d.ts 文件的检查，提升性能
+    "sourceMap": true, // 建议开启，便于调试
+
+    // --- Linter
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true, //防止在 switch 语句中出现意外的“穿透”行为。如果一个 case 块没有 break; 或 return;，TypeScript 会报错。
+    "noUncheckedSideEffectImports": true, // 防止导入的模块在没有使用的情况下产生副作用
+    "erasableSyntaxOnly": true // 只允许使用可擦除的语法，确保代码在编译后不会有任何运行时依赖强制 import type 的正确使用，确保类型导入在编译后被完全擦除，不会意外地变成值导入。
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@/*": ["src/*"], // 演示应用的别名
+    //   "@my-lib/*": ["packages/*"] // 组件库源码的别名
+    // }
+  }
+}

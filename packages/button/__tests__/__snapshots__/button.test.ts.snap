@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button.vue - Events > Button.vue - Snapshot > should match the snapshot for a default button 1`] = `"<button class="my-button my-button--default my-button--medium">Default Button</button>"`;
+
+exports[`Button.vue - Events > Button.vue - Snapshot > should match the snapshot for a primary and disabled button 1`] = `"<button class="my-button my-button--primary my-button--disabled my-button--medium" disabled="">Disabled Primary</button>"`;

@@ -1,0 +1,23 @@
+// tsconfig.app.json
+{
+  "extends": "./tsconfig.json", // 继承根配置
+  "compilerOptions": {
+    "composite": true, // 必须，因为被根配置引用
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // 浏览器环境
+    "jsx": "preserve", // 支持 JSX 语法（在 Vue 中常用）
+
+    // 关键：对于演示应用，我们不希望 tsc 生成任何文件，全权交给 Vite
+    "noEmit": true,
+    "esModuleInterop": true, // 兼容性“神器”。它解决了一些旧的 CommonJS 模块 (require) 和现代 ES 模块 (import) 之间相互导入时的兼容性问题。在现代项目中，强烈建议永远开启。
+    "moduleResolution": "bundler" // 使用 Vite 的模块解析方式
+  },
+  "include": [
+    // packages 目录下的所有源文件
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    // types/目录下的类型声明文件
+    "types/**/*.d.ts",
+    "types/env.d.ts"
+  ],
+  "exclude": ["packages/**/__tests__/*"]
+}
