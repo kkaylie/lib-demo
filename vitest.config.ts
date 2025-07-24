@@ -1,4 +1,3 @@
-/// <reference types="vitest/config" />
 import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
 import path from 'node:path';
@@ -22,8 +21,6 @@ export default defineConfig({
       {
         extends: true,
         plugins: [
-          // The plugin will run tests for the stories defined in your Storybook config
-          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
           storybookTest({
             configDir: path.join(dirname, '.storybook')
           })],
@@ -47,23 +44,24 @@ export default defineConfig({
       // provider: 'v8',
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],
+      thresholds: {
+        lines: 80,
+        functions: 80,
+        branches: 80,
+        statements: 80,
+      },
       include: ['packages/**/*.{vue,ts}'],
-
-      // 4. 配置需要从覆盖率统计中排除的文件
       exclude: [
         'node_modules/',
         'dist/',
         'packages/**/__tests__/**',
         'packages/**/*.stories.ts',
-        'packages/index.ts', // 排除主入口文件
+        'packages/index.ts',
         '.storybook/',
-        'coverage/', // 排除覆盖率报告本身
-        // 排除所有配置文件
+        'coverage/',
         '**/*.config.ts',
         '**/*.config.js',
-        // 排除类型声明文件
         '**/*.d.ts',
-        // 排除你的 demo 应用（如果它在 src 目录）
         'src/',
       ],
     },
