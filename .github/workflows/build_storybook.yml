@@ -1,4 +1,4 @@
-name: Build Storybook CI
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
