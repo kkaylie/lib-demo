@@ -1,8 +1,22 @@
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import '../packages/styles/index.css'
+import '../packages/styles/theme.css'
+import './storybook-theme.css';
 import type { Preview } from '@storybook/vue3-vite'
-import './index.css'
+
+const decorators = [
+  withThemeByDataAttribute({
+    themes: {
+      Light: 'light', // "Light" 是显示在菜单里的名字, "light" 是 data-theme 的值
+      Dark: 'dark',
+    },
+    defaultTheme: 'Light', // 默认主题
+    attributeName: 'data-theme', // 要修改的属性名
+  }),
+];
+
 
 const preview: Preview = {
-  tags: ['autodocs'],
   parameters: {
     controls: {
       matchers: {
@@ -10,14 +24,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
-    a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
   },
+  decorators,
 };
 
 export default preview;

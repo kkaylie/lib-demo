@@ -44,15 +44,16 @@ const handleClick = (event: MouseEvent) => {
 <style>
 /* 简单样式 */
 .my-button {
+  background-color: var(--button-background); /* 使用变量 */
+  color: var(--button-text-color);           /* 使用变量 */
+  border: 1px solid var(--border-color);      /* 使用变量 */
   padding: 8px 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  cursor: pointer;
 }
+
 .my-button--primary {
-  background-color: blue;
+  background-color: var(--primary-color);
   color: white;
-  border-color: blue;
+  border-color: var(--primary-color);
 }
 .my-button--disabled {
   cursor: not-allowed;

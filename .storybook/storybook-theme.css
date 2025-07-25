@@ -1,0 +1,71 @@
+:root,
+[data-theme="dark"],
+.dark {
+  /* --- Base Settings --- */
+  --sb-base-font: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sb-code-font: "Fira Code", "Fira Mono", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+
+  /* --- Colors --- */
+  
+  /* Primary and Secondary colors for active states, links, etc. */
+  --sb-primary-color: #1EA7FD;
+  --sb-secondary-color: #1EA7FD;
+
+  /* UI Colors */
+  --sb-app-background: #2f2f2f;
+  --sb-app-content-background: #333333;
+  --sb-app-border-color: #444444;
+  --sb-app-border-radius: 4px;
+
+  /* Text Colors */
+  --sb-text-color: #FFFFFF;
+  --sb-text-inverse-color: #333333;
+  --sb-text-muted-color: #999999;
+
+  /* Toolbar Colors */
+  --sb-bar-text-color: #999999;
+  --sb-bar-selected-color: #FFFFFF;
+  --sb-bar-background: #2f2f2f;
+
+  /* Form Control Colors */
+  --sb-input-background: #3f3f3f;
+  --sb-input-border-color: #555555;
+  --sb-input-text-color: #FFFFFF;
+  --sb-input-border-radius: 4px;
+
+  /* --- Other --- */
+  --sb-grid-cell-size: 10px;
+}
+
+[data-theme="dark"] .sbdocs {
+  /* 使用您在 theme.css 中定义的 CSS 变量 */
+  background-color: var(--sb-app-background);
+  color: var(--sb-text-color);
+}
+
+[data-theme="dark"] .sb-bar {
+  background-color: var(--sb-bar-background);
+  border-color: var(--sb-bar-border-color);
+  color: var(--sb-bar-text-color);
+}
+[data-theme="dark"] .doc-story {
+  background-color: var(--sb-app-content-background);
+  color: var(--sb-text-color);
+}
+
+[data-theme="dark"] .sbdocs h1,
+[data-theme="dark"] .sbdocs h2,
+[data-theme="dark"] .sbdocs h3 {
+  border-bottom-color: var(--sb-border-color);
+  color: var(--sb-text-color);
+}
+
+[data-theme="dark"] .sbdocs code {
+  background-color: var(--sb-input-background);
+  color: var(--sb-text-color);
+  border: 1px solid var(--sb-input-border-color);
+}
+
+[data-theme="dark"] .sbdocs a {
+  color: var(--sb-primary-color);
+}

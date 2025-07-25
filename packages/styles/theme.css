@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #3498db;
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --border-color: #dddddd;
+  --button-background: #f0f0f0;
+  --button-text-color: #333333;
+}
+
+[data-theme="dark"] {
+  --primary-color: #5dade2;
+  --text-color: #f0f0f0;
+  --background-color: rgb(27, 28, 29);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --button-background: #333333;
+  --button-text-color: #f0f0f0;
+}
