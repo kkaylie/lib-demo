@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import istanbul from 'vite-plugin-istanbul';
+import tailwindcss from '@tailwindcss/vite'
+import _istanbul from 'vite-plugin-istanbul'
+
+const istanbul = (_istanbul as any).default || _istanbul;
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -46,5 +49,6 @@ export default defineConfig({
       // 只在测试时启用
       // requireEnv: true,
     }),
+    tailwindcss(),
   ],
 })

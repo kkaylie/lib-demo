@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "module": "CommonJS"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
     // "types": ["node", "vitest/globals", "vite/client"]
   },
   "include": ["vite.config.ts", "vitest.config.ts", "commitlint.config.ts"]
